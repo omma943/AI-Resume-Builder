@@ -24,11 +24,24 @@ export function ResumeProvider({
   const [resumeData, setResumeData] = useState<ResumeData>({
     fullName: "",
     jobTitle: "",
+
     email: "",
     phone: "",
     location: "",
+
     linkedin: "",
     github: "",
+
+    summary: "",
+
+    website: "",
+    portfolio: "",
+    dateOfBirth: "",
+    nationality: "",
+
+    education: [],
+
+    skills: [],
   });
 
   const updateResumeData = (data: Partial<ResumeData>) => {
@@ -54,7 +67,9 @@ export function useResume() {
   const context = useContext(ResumeContext);
 
   if (!context) {
-    throw new Error("useResume must be used inside ResumeProvider");
+    throw new Error(
+      "useResume must be used inside ResumeProvider"
+    );
   }
 
   return context;
